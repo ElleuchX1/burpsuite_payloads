@@ -1,0 +1,7 @@
+﻿当前数据库:db_name()
+当前用户:system_user
+数据库版本:@@version
+主机名:host_name()
+数据文件:(select top 1 filename from sysfiles)
+public:IS_MEMBER(0x640062005F006F0077006E0065007200)
+db_owner:IS_MEMBER(0x7000750062006C0069006300)

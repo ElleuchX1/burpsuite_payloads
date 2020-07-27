@@ -1,0 +1,2 @@
+exists(select 1 from sysobjects)
+(select count(*) from sysobjects)>0
